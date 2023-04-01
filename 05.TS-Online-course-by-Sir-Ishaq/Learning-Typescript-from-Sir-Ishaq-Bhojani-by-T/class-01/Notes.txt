@@ -1,0 +1,13 @@
+
+Typescript Types
+
+
+number 5,8.9,-3(Integers,Floats,Decimals all will consider as Number)
+
+string "Tayyaba",
+
+boolean true,false
+
+
+var is not allowed in TS onlu use let and const while making variables
+

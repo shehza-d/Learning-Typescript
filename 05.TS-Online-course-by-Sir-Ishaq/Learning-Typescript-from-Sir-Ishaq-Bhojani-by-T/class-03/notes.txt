@@ -1,0 +1,39 @@
+Setup for a  proper project in typescript
+
+By the command 
+
+tsc --init 
+
+i will make the tsconfig.json file conatinning all the configurations
+
+Main configurations
+
+1.target 
+
+we will it that compiles the ts code in es6 js 
+
+2.rootDir(for ts files)
+
+in which direc your ts file is 
+
+generally we make src folder and put the ts file in it
+
+3.outDir(for js files)
+
+generally we make dist folder and put the js file in it
+
+
+After doing all of these
+
+you can only use the command
+
+tsc
+
+it will automatically go in the src folder and will compile the ts file
+
+and you can see it will create the .js.map file in the dist folder by the source map which is true
+
+Modify your index.html file directory of .js file
+
+
+tsc --watch 0r --w get rid of typing again tsc for each compilation
