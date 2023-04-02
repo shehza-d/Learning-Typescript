@@ -1,7 +1,6 @@
 "use strict";
 
 class Vehicle {
-
   _make;
   _model;
   _year;
@@ -47,7 +46,6 @@ class Vehicle {
       this.rented = false;
     }
   }
-
 }
 
 class Car extends Vehicle {
