@@ -1,6 +1,4 @@
-
 # Learning-Typescript-from-Sir-Ishaq-Bhojani
-
 
 In this class I have learnt that when you are working with Javascript it allows you to put the value of any type don't restrict you from doing that which causes the major
 

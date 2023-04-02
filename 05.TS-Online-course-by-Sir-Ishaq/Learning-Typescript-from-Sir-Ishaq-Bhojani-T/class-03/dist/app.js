@@ -26,16 +26,16 @@ const error = [404, "Not found"];
 // Shorthand
 // if you don't want to initialze in the constructor like this
 class Student {
-    constructor(name, rollNo) {
-        this.name = name;
-        this.rollNo = rollNo;
-        this.skills = [];
-        // this.name = name;
-        // this.rollNo=rollNo   by shorthand don't need to write even these
-    }
-    addSkill(skill) {
-        this.skills.push(skill);
-    }
+  constructor(name, rollNo) {
+    this.name = name;
+    this.rollNo = rollNo;
+    this.skills = [];
+    // this.name = name;
+    // this.rollNo=rollNo   by shorthand don't need to write even these
+  }
+  addSkill(skill) {
+    this.skills.push(skill);
+  }
 }
 // We can access when they are public
 const student1 = new Student("Tayyaba", 123);
@@ -64,34 +64,34 @@ student2.addSkill("HTML");
 //========= Inheritance ==============
 // when we want to use any prebuild class and add some new additional properties or methods
 class PositionHolder {
-    constructor(name, rollNo) {
-        this.name = name;
-        this.rollNo = rollNo;
-        this.subjects = [];
-    }
-    addTopSubject(subject) {
-        this.subjects.push(subject);
-    }
+  constructor(name, rollNo) {
+    this.name = name;
+    this.rollNo = rollNo;
+    this.subjects = [];
+  }
+  addTopSubject(subject) {
+    this.subjects.push(subject);
+  }
 }
 const position1 = new PositionHolder("Tayyaba", 123);
 // console.log(student1.rollNo);
 // console.log(position1);
 class Competitors extends PositionHolder {
-    constructor(name, rollNo) {
-        super(name, rollNo);
-        this.competition = [];
-    }
-    addingSubjects() {
-        super.addTopSubject("cinese");
-    }
-    addCompetitor(competition) {
-        this.competition.push(competition);
-    }
+  constructor(name, rollNo) {
+    super(name, rollNo);
+    this.competition = [];
+  }
+  addingSubjects() {
+    super.addTopSubject("cinese");
+  }
+  addCompetitor(competition) {
+    this.competition.push(competition);
+  }
 }
 let PCstudent = new Competitors("Umra", 67);
 console.log(PCstudent.name);
 console.log(PCstudent.rollNo);
 console.log(PCstudent.addCompetitor("runner"));
 console.log(PCstudent.addingSubjects());
-// TODO: Callings methods of the parents in the child class 
+// TODO: Callings methods of the parents in the child class
 //# sourceMappingURL=app.js.map

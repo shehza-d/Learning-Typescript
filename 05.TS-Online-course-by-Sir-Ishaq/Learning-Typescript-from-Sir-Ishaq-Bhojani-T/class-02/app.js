@@ -1,19 +1,19 @@
-// Types 
+// Types
 var person1 = {
-    name: "Tayyaba",
-    rollNo: 653853,
-    email: "ta6402792@gmail.com",
-    password: 12 // Second approach
+  name: "Tayyaba",
+  rollNo: 653853,
+  email: "ta6402792@gmail.com",
+  password: 12, // Second approach
 };
 person1.hobbies = ["reading"];
 console.log(person1);
 var person2 = [];
 person2.push({
-    name: "Umra",
-    rollNo: 7888,
-    email: "umra45@gmail.com",
-    hobbies: ["cooking"],
-    password: 9090,
+  name: "Umra",
+  rollNo: 7888,
+  email: "umra45@gmail.com",
+  hobbies: ["cooking"],
+  password: 9090,
 });
 console.log(person2);
 // Approach # 01
@@ -22,21 +22,20 @@ console.log(person2);
 // You can use the optional operator ? in the type to make it optional
 // Functions
 var add = function (val1, val2, val3, cb) {
-    // calling callback
-    cb(7890);
-    return val1 + val2 + val3;
+  // calling callback
+  cb(7890);
+  return val1 + val2 + val3;
 };
 var func; // It will accept any function
 func = add;
 console.log(func);
 var operation = function (num1, num2, calc) {
-    if (calc === "ADD" || calc === "+") {
-        console.log("hello");
-        return num1 + num2;
-    }
-    else if (calc === "SUBTRACT" || calc === "-") {
-        return num1 - num2;
-    }
+  if (calc === "ADD" || calc === "+") {
+    console.log("hello");
+    return num1 + num2;
+  } else if (calc === "SUBTRACT" || calc === "-") {
+    return num1 - num2;
+  }
 };
 // console.log(operation(1,2,"ADD"));
 // console.log(operation(8,3,"SUBTRACT"));

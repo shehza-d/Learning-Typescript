@@ -20,27 +20,27 @@
 // Now how can we make getters
 // just insert _before your private properties
 class Product {
-    constructor(_id, _name, _price) {
-        this._id = _id;
-        this._name = _name;
-        this._price = _price;
+  constructor(_id, _name, _price) {
+    this._id = _id;
+    this._name = _name;
+    this._price = _price;
+  }
+  get name() {
+    return this._name; // getters will always return
+  }
+  get id() {
+    return this._id;
+  }
+  get price() {
+    return this._price;
+  }
+  // setter must have required parameter
+  set name(newName) {
+    if (!newName) {
+      throw new Error("Name can't be empty string");
     }
-    get name() {
-        return this._name; // getters will always return
-    }
-    get id() {
-        return this._id;
-    }
-    get price() {
-        return this._price;
-    }
-    // setter must have required parameter
-    set name(newName) {
-        if (!newName) {
-            throw new Error("Name can't be empty string");
-        }
-        this._name = newName;
-    }
+    this._name = newName;
+  }
 }
 // const product1 = new Product(1, 'Milk', 4500);
 //Benefit you have you call like product1.function()  simply you can call these as properties
@@ -53,16 +53,16 @@ class Product {
 // console.log(product1.name);
 // Revision Inheritance
 class clothingProducts extends Product {
-    constructor(id, price, name, _color, _size) {
-        super(id, name, price);
-        this._color = _color;
-        this._size = _size;
-    }
-    getDiscount() {
-        return this.price * 0.9;
-    }
+  constructor(id, price, name, _color, _size) {
+    super(id, name, price);
+    this._color = _color;
+    this._size = _size;
+  }
+  getDiscount() {
+    return this.price * 0.9;
+  }
 }
-const tShirt = new clothingProducts(3, 2300, 't-shirt', 'black', 'XL');
+const tShirt = new clothingProducts(3, 2300, "t-shirt", "black", "XL");
 console.log(tShirt);
 console.log(tShirt.getDiscount());
 // abstract class those methods in the base/parent class you want to also in the child class or those who are extending the base class
@@ -70,14 +70,13 @@ console.log(tShirt.getDiscount());
 // Singletons
 // class should have only 1 object
 class myNumber {
-    constructor() {
+  constructor() {}
+  static getInstance(no) {
+    if (!this.instance) {
+      this.instance = new myNumber();
     }
-    static getInstance(no) {
-        if (!this.instance) {
-            this.instance = new myNumber();
-        }
-        return this.instance;
-    }
+    return this.instance;
+  }
 }
 const number1 = myNumber.getInstance(4);
 console.log(number1);
