@@ -133,18 +133,18 @@ class Motorcycle extends Vehicle {
 }
 
 //runnign
-const car: Vehicle = new Car("Toyota", "SUPRA", 2010, "S", 2);
+const car: Car = new Car("Toyota", "SUPRA", 2010, "S", 2);
 // const car = new Car("Toyota", "SUPRA", 2010, "S", 2, true);//ye phale se rented hy
-// console.log(car.features);
+console.log(car.features);
 
-// car.return;                  //
-// console.log(car.rented);     //
-// car.rent();					//
-// console.log(car.rented);		//
-// console.log(car.rentalRate());
-// car.rent(); 					//
-// car.return(); 				//
-// car.rent();					//
+car.return; //
+console.log(car.rented); //
+car.rent(); //
+console.log(car.rented); //
+console.log(car.rentalRate());
+car.rent(); //
+car.return(); //
+car.rent(); //
 
 const truck = new Truck("Tesla", "Semi", 2020, 10000);
 // console.log(truck.rentalRate()); // 200000
