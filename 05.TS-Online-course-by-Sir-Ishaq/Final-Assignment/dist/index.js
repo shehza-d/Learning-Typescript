@@ -27,20 +27,20 @@ class Vehicle {
     }
     rent() {
         if (!this.rented) {
-            this.rented = true;
             console.log("You have successfully rented this vehicle.");
+            this.rented = true;
         }
         else {
             console.log("Sorry, this vehicle is already rented.");
         }
     }
     return() {
-        if (this.rented) {
-            console.log("You have successfully returned this vehicle.");
-            this.rented = false;
+        if (!this.rented) {
+            console.log("Sorry, This vehicle has not been rented.");
         }
         else {
-            console.log("Sorry, This vehicle has not been rented.");
+            console.log("You have successfully returned this vehicle.");
+            this.rented = false;
         }
     }
 }
@@ -52,28 +52,29 @@ class Car extends Vehicle {
         this._seats = seats;
         this._classType = classType;
     }
-    get detail() {
+    get features() {
         return `This car is a ${this._classType} class car and has ${this._seats} seats.`;
     }
     rentalRate() {
-        return 50;
+        return 50_000;
     }
 }
 class Truck extends Vehicle {
-    _cargoCapacity;
-    constructor(make, model, year, cargoCapacity, rented = false) {
+    _weightCapacity;
+    constructor(make, model, year, weightCapacity, rented = false) {
         super(make, model, year, rented);
-        this._cargoCapacity = cargoCapacity;
+        this._weightCapacity = weightCapacity;
     }
-    get cargoCapacity() {
-        return this._cargoCapacity;
+    get weightCapacity() {
+        return this._weightCapacity;
     }
     rentalRate() {
-        return 75;
+        return 200_000;
     }
 }
 class Motorcycle extends Vehicle {
     _cc;
+    rentalRate1 = 32;
     constructor(make, model, year, cc, rented = false) {
         super(make, model, year, rented);
         this._cc = cc;
@@ -82,30 +83,24 @@ class Motorcycle extends Vehicle {
         return this._cc;
     }
     rentalRate() {
-        return 30;
+        return 5_000;
     }
 }
 //runnign
-// const car = new Car("Tojyota", "Camry", 2021, "B", 4);
-// console.log(car);
-// car.rent(); // You have successfully rented this vehicle.
-// console.log(car.rented); // true
-// console.log(car.rentalRate()); // 50
-// car.return(); // You have successfully returned this vehicle.
-// const truck = new Truck("Ford", "F-150", 2022, 1000);
-// // console.log(truck.rented); // false
-// // console.log(truck.rentalRate()); // 75
-// truck.rent(); // You have successfully rented this vehicle.
-// truck.rent(); // Sorry, this vehicle is already rented.
-// console.log(truck.rented); // true
-// truck.return(); // You have successfully returned this vehicle.
-//Test2 the classes
-const car = new Car("Toyota", "Corolla", 2018, "S", 5);
-car.rent();
-car.rent(); // should print "This vehicle is already rented."
-car.return();
-car.return(); // should print "This vehicle has not been rented yet."
-const truck = new Truck("Ford", "F-150", 2020, 1000);
-console.log(truck.rentalRate()); // should print 100
-const motorcycle = new Motorcycle("Honda", "CBR600RR", 2021, 600);
-console.log(motorcycle.cc); // should print 600
+const car = new Car("Toyota", "SUPRA", 2010, "S", 2);
+// const car = new Car("Toyota", "SUPRA", 2010, "S", 2, true);//ye phale se rented hy
+// console.log(car.features);
+// car.return;                  //
+// console.log(car.rented);     //
+// car.rent();					//
+// console.log(car.rented);		//
+// console.log(car.rentalRate());
+// car.rent(); 					//
+// car.return(); 				//
+// car.rent();					//
+const truck = new Truck("Tesla", "Semi", 2020, 10000);
+// console.log(truck.rentalRate()); // 200000
+// console.log(truck.weightCapacity); // 1000
+const motorcycle = new Motorcycle("Yamaha", "YBR-125G", 2023, 150);
+// console.log(motorcycle.rentalRate()); // 5000
+// console.log(motorcycle.cc); // 150
