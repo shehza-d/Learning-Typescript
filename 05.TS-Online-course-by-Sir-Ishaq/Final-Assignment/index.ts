@@ -60,8 +60,8 @@ abstract class Vehicle {
 }
 
 class Car extends Vehicle {
-  private _seats: number;
   private _classType: CarClassType;
+  private _seats: number;
 
   constructor(
     make: string,
@@ -72,8 +72,8 @@ class Car extends Vehicle {
     rented: boolean = false
   ) {
     super(make, model, year, rented);
-    this._seats = seats;
     this._classType = classType;
+    this._seats = seats;
   }
 
   get features(): string {
@@ -110,7 +110,6 @@ class Truck extends Vehicle {
 
 class Motorcycle extends Vehicle {
   private _cc: number;
-  private rentalRate1: number = 32;
 
   constructor(
     make: string,
@@ -135,16 +134,16 @@ class Motorcycle extends Vehicle {
 //runnign
 const car: Car = new Car("Toyota", "SUPRA", 2010, "S", 2);
 // const car = new Car("Toyota", "SUPRA", 2010, "S", 2, true);//ye phale se rented hy
-console.log(car.features);
+console.log(car.features); //This car is a S class car and has 2 seats
 
-car.return; //
-console.log(car.rented); //
-car.rent(); //
-console.log(car.rented); //
-console.log(car.rentalRate());
-car.rent(); //
-car.return(); //
-car.rent(); //
+car.return();                   // Sorry, This vehicle has not been rented.
+console.log(car.rented);        // false
+car.rent();                     // You have successfully rented this vehicle.
+console.log(car.rented);        // true
+console.log(car.rentalRate());  // 50000
+car.rent();                     // Sorry, this vehicle is already rented.
+car.return();                   // You have successfully returned this vehicle.
+car.rent();                     // You have successfully rented this vehicle.
 
 const truck = new Truck("Tesla", "Semi", 2020, 10000);
 // console.log(truck.rentalRate()); // 200000
